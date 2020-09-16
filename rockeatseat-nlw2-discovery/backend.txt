@@ -1,0 +1,57 @@
+Node: possibilita que o js rode na máquina e não somente no navegador.
+
+
+>npm init -y
+Inicia um projeto na pasta do projeto com o package.json (informações sobre o projeto)
+
+
+Instalação de dependencias
+
+>npm install express
+Instala algumas bibliotecas para o projeto
+ex.: 
+- node_modules
+- inclue especificações da dependencia do express no package.json
+
+
+
+Configuração de servidor > server.js
+require('express')().listen(5000)
+
+5000: a porta local para rodar no navegador
+>node src/server.js
+(local do arquivo)
+
+Para automatizar a reinicialização do servidor ao salvar o arquivo server.js
+>npm install nodemon -D //monitoramento no node 
+*-D instala em um lugar especifico para quem é desenvolvedor
+
+package.json
+-Alterar no "script" em "test..." por:
+ "dev": "nodemon src/server.js"
+
+Terminal
+> npm run dev
+
+Caso seja necessário reiniciar o servidor
+>rs
+
+
+
+>npm install nunjucks
+-utiliza o render para retornar as rotas
+//Configuração
+nunjucks.configure('src/views', {
+    express: server,
+    noCache: true,
+})
+
+-possibilita enviar dados do backend para a pagina web
+
+
+
+
+SQLite
+-Banco de dados que reside na própria aplicação
+-Para iniciantes no mundo SQL
+
